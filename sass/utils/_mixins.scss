@@ -1,0 +1,11 @@
+@mixin tranzition-color {
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+@mixin font($fs, $fw, $lh, $ls) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+  letter-spacing: $ls;
+}

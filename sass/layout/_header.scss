@@ -1,0 +1,113 @@
+.main-header {
+  display: flex;
+  align-items: center;
+}
+.section-header {
+  border-bottom: 1px solid #ececec;
+}
+.header__logo {
+  display: flex;
+  margin-right: 93px;
+  color: #000000;
+}
+
+.logo--accent {
+  color: var(--accent-color);
+}
+
+.header-nav {
+  display: flex;
+  @include font(14px, 500, 1.14, 0.02em);
+  // font-weight: 500;
+  // font-size: 14px;
+  // line-height: 1.14;
+  // letter-spacing: 0.02em;
+  align-items: center;
+}
+
+.header-list {
+  display: flex;
+}
+.header-list__item {
+  margin-right: 50px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.header-list__link {
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  color: var(--header-text-color);
+  // transition-property: color;
+  // transition-duration: 250ms;
+  // transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  @include tranzition-color;
+  &:hover,
+  &:focus,
+  .current {
+    color: var(--accent-color);
+  }
+}
+
+.current {
+  position: relative;
+}
+.header-list__link.current::after {
+  display: block;
+  content: '';
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
+.auth-nav {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  @include font(14px, 500, 1.14, 0.02em);
+  // font-weight: 500;
+  // font-size: 14px;
+  // line-height: 1.14;
+  // letter-spacing: 0.02em;
+  color: var(--primary-text-color);
+}
+
+.auth-nav__item + .auth-nav__item {
+  margin-left: 50px;
+}
+
+.auth-nav__link {
+  display: flex;
+  align-items: center;
+  color: var(--primary-text-color);
+  // transition-property: color;
+  // transition-duration: 250ms;
+  // transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  @include tranzition-color;
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.icon-envelope {
+  display: inline-block;
+  width: 16px;
+  height: 12px;
+  margin-right: 10px;
+  fill: currentColor;
+}
+
+.icon-smartphone {
+  display: inline-block;
+  width: 10px;
+  height: 16px;
+  margin-right: 10px;
+  fill: currentColor;
+}
