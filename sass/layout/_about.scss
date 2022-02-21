@@ -1,5 +1,9 @@
 .about {
   padding-top: 47px;
+  display: none;
+  @include desk {
+    display: block;
+  }
 }
 
 .about__title {

@@ -1,10 +1,11 @@
 .section-hero {
   max-width: 1600px;
-  height: 600px;
+  // height: 600px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 200px;
-  padding-bottom: 200px;
+
+  padding-top: 118px;
+  padding-bottom: 118px;
   text-align: center;
 
   background-color: #c4c4c4;
@@ -16,17 +17,33 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  @include desk {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+}
+.hero-description {
+  margin: 0 auto;
+  // width: 696px;
+  max-width: 360px;
+  @include desk {
+    max-width: 696px;
+  }
 }
 .section-hero__title {
   margin-bottom: 30px;
   color: var(--second-title-text);
-  @include font(44px, 900, 1.36, 0.06em);
+
+  @include font(26px, 900, 1.62, 0.06em);
   // font-weight: 900;
   // font-size: 44px;
   // line-height: 1.36;
   // text-align: center;
   // letter-spacing: 0.06em;
   text-transform: uppercase;
+  @include desk {
+    @include font(44px, 900, 1.36, 0.06em);
+  }
 }
 .button {
   min-width: 200px;
