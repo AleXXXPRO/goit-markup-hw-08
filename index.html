@@ -20,7 +20,7 @@
   </head>
   <body>
     <!--------------------------------------Header-->
-    <!-- <header class="section-header">
+    <header class="section-header">
       <div class="container main-header">
         <nav class="header-nav">
           <a href="/" class="logo header__logo">
@@ -58,8 +58,64 @@
             >
           </li>
         </ul>
+        <button class="menu-open-btn">
+          <svg class="open-modal-icon" width="40" height="40">
+            <use href="./images/icons.svg#icon-burger_40px"></use>
+          </svg>
+        </button>
       </div>
-    </header> -->
+      <div class="mob-menu is-hidden">
+        <div class="container-mob">
+          <button class="menu-close-btn">
+            <svg class="close-modal-icon" width="40" height="40">
+              <use href="./images/icons.svg#icon-crose_burger_40px"></use>
+            </svg>
+          </button>
+          <ul class="mob-menu-list list">
+            <li class="mob-menu-item">
+              <a href="" class="mob-menu-link"
+                ><span class="mob-menu-link--accent">Студия</span></a
+              >
+            </li>
+            <li class="mob-menu-item">
+              <a href="" class="mob-menu-link">Портфолио</a>
+            </li>
+            <li class="mob-menu-item">
+              <a href="" class="mob-menu-link">Контакты</a>
+            </li>
+          </ul>
+
+          <div class="mob-menu-bottom">
+            <ul class="mob-contacts-list list">
+              <li class="mob-contacts-item">
+                <a href="" class="mob-contacts-link"
+                  ><span class="mob-contacts-link--accent"
+                    >+380961111111</span
+                  ></a
+                >
+              </li>
+              <li class="mob-contacts-item">
+                <a href="" class="mob-contacts-link">info@devstudio.com</a>
+              </li>
+            </ul>
+            <ul class="mob-social-list list">
+              <li class="mob-social-item">
+                <a href="" class="mob-social-link">Instagram</a>
+              </li>
+              <li class="mob-social-item">
+                <a href="" class="mob-social-link">Twitter</a>
+              </li>
+              <li class="mob-social-item">
+                <a href="" class="mob-social-link">Facebook</a>
+              </li>
+              <li class="mob-social-item">
+                <a href="" class="mob-social-link">LinkedIn</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
     <!-----------------------------------Main---------------------->
     <main>
       <section class="section-hero">
@@ -170,12 +226,7 @@
           <h2 class="team__title">Наша команда</h2>
           <ul class="team__list list">
             <li class="team__item">
-              <img
-                src="./images/Игорьs.jpg"
-                alt="Фото Игоря Демьяненко"
-                width="270"
-                height="260"
-              />
+              <img src="./images/Игорьs.jpg" alt="Фото Игоря Демьяненко" />
               <div class="team__text-content">
                 <h3 class="team__title-members">Игорь Демьяненко</h3>
                 <p class="team__text">Product Designer</p>
@@ -212,12 +263,7 @@
               </div>
             </li>
             <li class="team__item">
-              <img
-                src="./images/Ольгаs.jpg"
-                alt="Фото Ольги Репиной"
-                width="270"
-                height="260"
-              />
+              <img src="./images/Ольгаs.jpg" alt="Фото Ольги Репиной" />
               <div class="team__text-content">
                 <h3 class="team__title-members">Ольга Репина</h3>
                 <p class="team__text">Frontend Developer</p>
@@ -254,12 +300,7 @@
               </div>
             </li>
             <li class="team__item">
-              <img
-                src="./images/Николайs.jpg"
-                alt="Фото Николая Тарасова"
-                width="270"
-                height="260"
-              />
+              <img src="./images/Николайs.jpg" alt="Фото Николая Тарасова" />
               <div class="team__text-content">
                 <h3 class="team__title-members">Николай Тарасов</h3>
                 <p class="team__text">Marketing</p>
@@ -296,12 +337,7 @@
               </div>
             </li>
             <li class="team__item">
-              <img
-                src="./images/Михаилs.jpg"
-                alt="Фото Михаила Ермакова"
-                width="270"
-                height="260"
-              />
+              <img src="./images/Михаилs.jpg" alt="Фото Михаила Ермакова" />
               <div class="team__text-content">
                 <h3 class="team__title-members">Михаил Ермаков</h3>
                 <p class="team__text">UI Designer</p>
@@ -392,7 +428,7 @@
       </section>
     </main>
     <!---------------------------------------------------Footer-->
-    <!-- <footer>
+    <footer>
       <section class="section-footer">
         <div class="container footer-all">
           <div class="section-footer__adress-all">
@@ -451,7 +487,7 @@
             </ul>
           </div>
           <div class="footer-subscribe">
-            <p class="footer-subscription-text">Подпишитесь на рассылку</p>
+            <!-- <p class="footer-subscription-text">Подпишитесь на рассылку</p> -->
             <form class="footer-form">
               <p class="footer-form__text">Подпишитесь на рассылку</p>
 
@@ -474,7 +510,7 @@
           </div>
         </div>
       </section>
-    </footer> -->
+    </footer>
     <!--  -->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
@@ -552,5 +588,6 @@
     </div>
 
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
   </body>
 </html>

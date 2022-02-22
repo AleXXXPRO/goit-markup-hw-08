@@ -121,7 +121,17 @@ body {
 }
 
 .header-list {
-  display: flex;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header-list {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header-list {
+    display: flex;
+  }
 }
 
 .header-list__item {
@@ -162,20 +172,38 @@ body {
 }
 
 .auth-nav {
-  display: flex;
+  display: none;
   margin-left: auto;
-  align-items: center;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
 }
-
-.auth-nav__item + .auth-nav__item {
-  margin-left: 50px;
+@media screen and (min-width: 768px) {
+  .auth-nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .auth-nav {
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+  }
 }
 
+@media (min-width: 768px) and (max-width: 1199px) {
+  .auth-nav__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .auth-nav__item + .auth-nav__item {
+    margin-left: 50px;
+  }
+}
 .auth-nav__link {
   display: flex;
   align-items: center;
@@ -202,6 +230,132 @@ body {
   height: 16px;
   margin-right: 10px;
   fill: currentColor;
+}
+
+.menu-open-btn {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  display: block;
+  margin-left: auto;
+}
+@media screen and (min-width: 768px) {
+  .menu-open-btn {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .menu-open-btn {
+    display: none;
+  }
+}
+
+.container-mob {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.mob-menu {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+}
+.mob-menu .container-mob {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.menu-close-btn {
+  position: absolute;
+  right: 15px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  top: -38px;
+}
+@media screen and (min-width: 768px) {
+  .menu-close-btn {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .menu-close-btn {
+    display: none;
+  }
+}
+
+.mob-menu-item:not(:last-child),
+.mob-contacts-item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mob-menu-link {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.18;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: #212121;
+}
+
+.mob-menu-link--accent {
+  color: #2196f3;
+}
+
+.mob-contacts-item {
+  margin-bottom: 64px;
+}
+
+.mob-contacts-link {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--primary-text-color);
+  color: #757575;
+}
+
+.mob-contacts-link--accent {
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.17;
+  letter-spacing: 0.02em;
+  color: #2196f3;
+}
+
+.mob-social-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mob-social-item:not(:last-child) {
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.mob-social-link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.12;
+  letter-spacing: 0.02em;
+  color: #2196f3;
 }
 
 .logo {
@@ -429,10 +583,12 @@ body {
   }
 }
 
+img {
+  max-width: 100%;
+}
+
 .team__item {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 30px;
   background-color: #fff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -461,6 +617,7 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .team__title {
+    margin-bottom: 50px;
     font-size: 36px;
     line-height: 1.17;
     letter-spacing: 0.03em;
@@ -532,18 +689,46 @@ body {
   text-align: center;
   color: var(--title-text-color);
 }
+@media screen and (min-width: 1200px) {
+  .client__title {
+    font-size: 36px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    margin-bottom: 50px;
+  }
+}
 
 .client__list {
-  margin-bottom: -30px;
   display: flex;
   flex-wrap: wrap;
   margin-left: -30px;
+  margin-bottom: -30px;
+}
+
+.client__item {
+  display: flex;
+  width: calc(100% / 2 - 30px);
+  margin-left: 30px;
+  margin-bottom: 30px;
+  height: 90px;
+}
+@media screen and (min-width: 768px) {
+  .client__item {
+    width: calc(100% / 3 - 30px);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .client__item {
+    width: calc(100% / 6 - 30px);
+  }
 }
 
 .client__link {
-  width: 210px;
-  height: 92px;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
   color: #e5e5e5;
   border: 1px solid #afb1b8;
   border-radius: 4px;
@@ -556,7 +741,6 @@ body {
 }
 
 .client__icon {
-  display: flex;
   width: 106px;
   height: 60px;
   fill: #afb1b8;
@@ -882,15 +1066,24 @@ body {
 .modal {
   display: flex;
   position: absolute;
-  padding: 40px;
+  padding: 15px;
   top: 50%;
   left: 50%;
-  width: 528px;
-  height: 581px;
+  width: 100%;
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: white;
+}
+@media screen and (min-width: 480px) {
+  .modal {
+    width: 450px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+  }
 }
 
 .btn-close__icon {
@@ -942,10 +1135,18 @@ body {
   margin-bottom: 12px;
   font-size: 20px;
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.5;
   letter-spacing: 0.03em;
   text-align: center;
   color: var(--header-text-color);
+}
+@media screen and (min-width: 1200px) {
+  .form__title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.03em;
+  }
 }
 
 .form__label {
@@ -1041,11 +1242,19 @@ textarea:focus {
 }
 
 .form__label-policy {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
-  line-height: 1.71;
+  line-height: 1.17;
   letter-spacing: 0.03em;
   color: var(--primary-text-color);
+}
+@media screen and (min-width: 1200px) {
+  .form__label-policy {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+  }
 }
 
 .form__policy-deal {

@@ -23,11 +23,18 @@
 .modal {
   display: flex;
   position: absolute;
-  padding: 40px;
+  // padding: 40px;
+  padding: 15px;
   top: 50%;
   left: 50%;
-  width: 528px;
-  height: 581px;
+  width: 100%;
+  @include tel {
+    width: 450px;
+  }
+
+  @include desk {
+    width: 528px;
+  }
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -80,7 +87,10 @@
 .form__title {
   /* outline: 1px solid blue; */
   margin-bottom: 12px;
-  @include font(20px, 700, 1.15, 0.03em);
+  @include font(20px, 700, 1.5, 0.03em);
+  @include desk {
+    @include font(20px, 700, 1.15, 0.03em);
+  }
   // font-weight: bold;
   // font-size: 20px;
   // line-height: 1.15;
@@ -163,7 +173,10 @@ textarea {
   padding-left: 14px;
 }
 .form__label-policy {
-  @include font(14px, 400, 1.71, 0.03em);
+  @include font(12px, 400, 1.17, 0.03em);
+  @include desk {
+    @include font(14px, 400, 1.71, 0.03em);
+  }
   // font-weight: normal;
   // font-size: 14px;
   // line-height: 1.71;
