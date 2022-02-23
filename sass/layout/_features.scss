@@ -1,5 +1,7 @@
 .features {
-  padding-bottom: 47px;
+  @include desk {
+    padding-bottom: 47px;
+  }
 }
 .features__list {
   margin-bottom: -30px;

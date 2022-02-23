@@ -1,23 +1,51 @@
 .footer-all {
-  display: flex;
-  align-items: baseline;
+  text-align: center;
+  @include tab {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-around;
+  }
+  @include desk {
+    flex-wrap: nowrap;
+    text-align: start;
+    justify-content: start;
+
+    // justify-content: start;
+  }
+  // display: flex;
+  // align-items: baseline;
 }
 .section-footer {
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: #2f303a;
 }
-.section-footer__adress-all {
-  width: 231px;
-}
+
 .section-footer__logo {
   display: block;
   color: #ffffff;
   margin-bottom: 20px;
+  @include font(24px, 700, 1.17, 0.03em);
+  @include desk {
+    @include font(26px, 700, 1.19, 0.03em);
+  }
+  // text-align: center;
 }
+.section-footer__addres {
+  margin-bottom: 60px;
+  @include desk {
+    margin-bottom: 0;
+  }
+}
+
 .section-footer__addres-fiz {
   display: block;
-  margin-bottom: 9px;
+
+  margin-bottom: 8px;
+  @include desk {
+    margin-bottom: 9px;
+  }
   font-style: normal;
   @include font(14px, null, 1.71, 0.03em);
   // font-size: 14px;
@@ -36,7 +64,10 @@
 
 .section-footer__mail {
   display: block;
-  margin-bottom: 9px;
+  margin-bottom: 8px;
+  @include desk {
+    margin-bottom: 9px;
+  }
   font-style: normal;
   @include font(14px, 400, 1.71, 0.03em);
   // font-weight: 400;
@@ -64,7 +95,6 @@
   // transition-property: color;
   // transition-duration: 250ms;
   // transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
   @include tranzition-color;
   &:hover,
   &:focus {
@@ -73,8 +103,11 @@
 }
 
 .footer-join {
-  width: 206px;
-  margin-left: 70px;
+  margin-bottom: 60px;
+  @include desk {
+    margin-bottom: 0;
+    margin-left: 70px;
+  }
 }
 .footer-join__text {
   margin-bottom: 20px;
@@ -88,6 +121,7 @@
 }
 .footer-join__list {
   display: flex;
+  justify-content: center;
 }
 .footer-join__link {
   display: flex;
@@ -116,14 +150,20 @@
 
 // --------------Footer_subs------------
 .footer-subscribe {
-  margin-left: 93px;
-  margin-right: 0;
-  width: 570px;
+  text-align: center;
+  @include desk {
+    margin-left: auto;
+
+    width: 570px;
+  }
 }
 
 .footer-form__text {
   display: block;
   margin-bottom: 20px;
+  @include desk {
+    text-align: start;
+  }
   @include font(14px, 700, 1.14, 0.03em);
   // font-weight: bold;
   // font-size: 14px;
@@ -133,13 +173,20 @@
   color: var(--second-title-text);
 }
 .footer-form__send {
-  display: flex;
+  @include desk {
+    display: flex;
+  }
 }
 .footer-form__input {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  width: 100%;
+  @include desk {
+    width: 358px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
   padding-left: 16px;
-  width: 358px;
+
   height: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: var(--second-title-text);
@@ -154,9 +201,14 @@
 }
 
 .footer-subscribe__button {
-  display: flex;
-  margin-left: 12px;
-  padding-left: 29px;
+  margin-top: 20px;
+  @include desk {
+    margin-top: 0;
+    display: flex;
+    margin-left: 12px;
+    padding-left: 29px;
+  }
+
   background-color: var(--accent-color);
   transition-property: box-shadow;
   transition-duration: 250ms;

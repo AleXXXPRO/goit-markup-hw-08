@@ -9,6 +9,10 @@
   display: flex;
   margin-right: 93px;
   color: #000000;
+  @include font(24px, 700, 1.17, 0.03em);
+  @include desk {
+    @include font(26px, 700, 1.19, 0.03em);
+  }
 }
 
 .logo--accent {
@@ -150,7 +154,10 @@
     display: none;
   }
 }
-
+.open-modal-icon:hover,
+.close-modal-icon:hover {
+  fill: var(--accent-color);
+}
 .container-mob {
   padding-left: 40px;
   padding-right: 40px;
