@@ -45,9 +45,13 @@
   flex-wrap: wrap;
   margin-top: -15px;
   margin-bottom: 40px;
-
-  // margin-bottom: 50px;
-  // justify-content: center;
+  @include tab {
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+  @include desk {
+    margin-bottom: 50px;
+  }
 }
 .portfolio__item {
   margin-top: 15px;
@@ -57,20 +61,26 @@
 }
 
 .gallary {
-  // display: flex;
-  // flex-wrap: wrap;
-  // margin-left: -30px;
-  // margin-top: -30px;
+  @include tab {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
 }
 .gallery__item {
-  // width: calc(100% / 3 - 30px);
-  // margin-left: 30px;
-  // margin-top: 30px;
-  // border: 1px solid #eeeeee;
+  border: 1px solid #eeeeee;
+  @include tab {
+    width: calc(100% / 2 - 30px);
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+  @include desk {
+    width: calc(100% / 3 - 30px);
+  }
   &:not(:last-child) {
     margin-bottom: 30px;
   }
-  border: 1px solid #eeeeee;
 }
 
 .gallery__link {
@@ -99,10 +109,14 @@
   // width: 370px;
   overflow: hidden;
 }
+img {
+  width: 100%;
+}
 .gallery__animation {
   display: inline-block;
   position: absolute;
-  width: 370px;
+  width: 100%;
+  // width: 370px;
   opacity: 0;
   padding: 63px 24px;
   @include font(18px, null, 1.56, 0.03em);
