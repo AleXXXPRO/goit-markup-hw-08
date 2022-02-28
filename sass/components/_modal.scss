@@ -1,5 +1,4 @@
 .backdrop {
-  z-index: 10;
   position: fixed;
   top: 0;
   left: 0;
@@ -22,10 +21,9 @@
 }
 
 .modal {
-  z-index: 11;
   display: flex;
-  position: absolute;
-  // padding: 40px;
+  position: fixed;
+
   padding: 15px;
   top: 50%;
   left: 50%;
@@ -36,6 +34,7 @@
 
   @include desk {
     width: 528px;
+    padding: 40px;
   }
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
