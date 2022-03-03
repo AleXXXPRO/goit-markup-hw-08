@@ -173,12 +173,16 @@
   color: var(--second-title-text);
 }
 .footer-form__send {
+  @include tab {
+    width: 450px;
+  }
   @include desk {
     display: flex;
   }
 }
 .footer-form__input {
   width: 100%;
+
   @include desk {
     width: 358px;
     padding-top: 15px;

@@ -146,7 +146,31 @@
             <li class="gallery__item">
               <a href="" class="gallery__link">
                 <div class="gallery__thumb">
-                  <img src="./images/kryak.jpg" alt="список сотрудников" />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/dz8/gallery/kryak-desk-1x.jpg 1x,
+                        ./images/dz8/gallery/kryak-desk-2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/dz8/gallery/kryak-tab-1x.jpg 1x,
+                        ./images/dz8/gallery/kryak-tab-2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/dz8/gallery/kryak-mob-1x.jpg 1x,
+                        ./images/dz8/gallery/kryak-mob-2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+                    <img src="./images/kryak.jpg" alt="список сотрудников" />
+                  </picture>
+
                   <p class="gallery__animation">
                     Технокряк это современная площадка распространения
                     коронавируса. Компании используют эту платформу для
