@@ -391,7 +391,7 @@ body {
   padding-bottom: 118px;
   text-align: center;
   background-color: #c4c4c4;
-  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(./images/dz8/hero-mob-1x.jpg);
+  background-image: url(./images/dz8/hero-mob-1x.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
