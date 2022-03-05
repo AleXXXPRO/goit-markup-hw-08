@@ -1120,6 +1120,7 @@ img {
 @media screen and (min-width: 1200px) {
   .footer-form__send {
     display: flex;
+    width: 100%;
   }
 }
 

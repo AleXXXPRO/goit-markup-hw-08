@@ -178,6 +178,7 @@
   }
   @include desk {
     display: flex;
+    width: 100%;
   }
 }
 .footer-form__input {
