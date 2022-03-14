@@ -46,8 +46,8 @@
   margin-top: -15px;
   margin-bottom: 40px;
   @include tab {
-    margin-bottom: 30px;
     justify-content: center;
+    margin-bottom: 30px;
   }
   @include desk {
     margin-bottom: 50px;
@@ -70,16 +70,22 @@
 }
 .gallery__item {
   border: 1px solid #eeeeee;
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
   @include tab {
     width: calc(100% / 2 - 30px);
     margin-left: 30px;
     margin-top: 30px;
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
   }
   @include desk {
     width: calc(100% / 3 - 30px);
-  }
-  &:not(:last-child) {
-    margin-bottom: 30px;
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -101,6 +107,9 @@
   padding-right: 24px;
   padding-bottom: 20px;
   padding-left: 24px;
+}
+.gallery__content {
+  color: var(--primary-text-color);
 }
 .gallery__thumb {
   display: flex;

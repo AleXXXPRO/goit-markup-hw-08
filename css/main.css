@@ -78,8 +78,7 @@ body {
   border: 0;
   padding: 0;
   clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(50%);
-          clip-path: inset(50%);
+  clip-path: inset(50%);
   margin: -1px;
 }
 
@@ -396,7 +395,7 @@ body {
   background-position: center;
   background-size: cover;
 }
-@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .section-hero {
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/dz8/hero-mob-2x.jpg);
   }
@@ -406,7 +405,7 @@ body {
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/dz8/hero-tab-1x.jpg);
   }
 }
-@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
   .section-hero {
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/dz8/hero-tab-2x.jpg);
   }
@@ -418,7 +417,7 @@ body {
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/dz8/hero-desk-1x.jpg);
   }
 }
-@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
   .section-hero {
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/dz8/hero-desk-2x.jpg);
   }
@@ -833,8 +832,8 @@ body {
 }
 @media screen and (min-width: 768px) {
   .portfolio__list {
-    margin-bottom: 30px;
     justify-content: center;
+    margin-bottom: 30px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -863,20 +862,26 @@ body {
 .gallery__item {
   border: 1px solid #eeeeee;
 }
+.gallery__item:not(:last-child) {
+  margin-bottom: 30px;
+}
 @media screen and (min-width: 768px) {
   .gallery__item {
     width: calc(50% - 30px);
     margin-left: 30px;
     margin-top: 30px;
   }
+  .gallery__item:not(:last-child) {
+    margin-bottom: 0;
+  }
 }
 @media screen and (min-width: 1200px) {
   .gallery__item {
     width: calc(33.3333333333% - 30px);
   }
-}
-.gallery__item:not(:last-child) {
-  margin-bottom: 30px;
+  .gallery__item:not(:last-child) {
+    margin-bottom: 0;
+  }
 }
 
 .gallery__link {
@@ -894,6 +899,10 @@ body {
   padding-right: 24px;
   padding-bottom: 20px;
   padding-left: 24px;
+}
+
+.gallery__content {
+  color: var(--primary-text-color);
 }
 
 .gallery__thumb {
@@ -1139,18 +1148,6 @@ img {
     padding-bottom: 15px;
   }
 }
-.footer-form__input::-moz-placeholder {
-  font-size: 16px;
-  line-height: 1.25;
-  letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.6);
-}
-.footer-form__input:-ms-input-placeholder {
-  font-size: 16px;
-  line-height: 1.25;
-  letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.6);
-}
 .footer-form__input::placeholder {
   font-size: 16px;
   line-height: 1.25;
@@ -1213,7 +1210,7 @@ img {
 .modal {
   display: flex;
   position: fixed;
-  padding: 15px;
+  padding: 40px;
   top: 50%;
   left: 50%;
   width: 100%;
@@ -1230,7 +1227,6 @@ img {
 @media screen and (min-width: 1200px) {
   .modal {
     width: 528px;
-    padding: 40px;
   }
 }
 
@@ -1343,22 +1339,6 @@ img {
   fill: var(--accent-color);
 }
 
-.form__field textarea::-moz-placeholder {
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
-}
-
-.form__field textarea:-ms-input-placeholder {
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
-}
-
 .form__field textarea::placeholder {
   font-size: 12px;
   font-weight: 400;
@@ -1385,10 +1365,6 @@ textarea:focus {
   margin-bottom: 20px;
 }
 
-.form__check {
-  padding-left: 14px;
-}
-
 .form__label-policy {
   font-size: 12px;
   font-weight: 400;
@@ -1407,12 +1383,11 @@ textarea:focus {
 
 .form__policy-deal {
   font-weight: normal;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--accent-color);
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .form__check {
